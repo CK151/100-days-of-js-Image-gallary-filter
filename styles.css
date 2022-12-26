@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+
+:root {
+    --white: #fff;
+    --black: #1c2b2d;
+    --blue: #31326f;
+    --light-blue: #005490;
+    --color-primary: #9d0191;
+    --color-secondary: #db6400;
+    --grey: #eee;
+    --dark-grey: #222831;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*start here */
+
+body {
+    background: var(--dark-grey);
+}
+
+.header {
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--white);
+    border-bottom: 1px solid var(--grey);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+h1 span {
+    color: var(--color-secondary);
+}
+
+.gallary-filter {
+    font-size: 1.4rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all .3s;
+    text-transform: capitalize;
+}
+
+.gallary-filter .active {
+    color: var(--color-secondary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.gallary-filter > * {
+    margin: 0 3px;
+}
+
+.gallary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 1rem;
+}
+
+.gallary .image {
+    border: 1px solid var(--grey);
+    overflow: hidden;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s;
+    animation: grow .5s ease-in-out;
+}
+
+@keyframes grow {
+    0% {transform: scale(.8);}
+
+    100% {transform: scale(1);}
+}
+
+.gallary .image:hover::after {
+    font-family: "Font Awsome 5 Free";
+    font-weight: 900;
+    content: "\f00e";
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-secondary);
+}
